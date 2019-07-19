@@ -3,6 +3,7 @@ body {
 }
 
 .App {
+  margin-top: 40px;
   text-align: center;
   color: white;  
 }
@@ -31,6 +32,12 @@ body {
   margin-top: 20px;
 }
 
+.center {
+  margin: auto;
+  display: table;
+  margin-top: 10px;
+}
+
 .dead {
   background-color: lightgray;
 }
@@ -41,4 +48,24 @@ body {
 
 .box:hover { 
   background: rgb(247, 6, 255);
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.rules ol {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.btn {
+  margin-right: 5px;
+}
+.btn:last-child {
+  margin-right: 0px;
 }
