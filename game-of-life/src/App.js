@@ -43,6 +43,8 @@ class App extends React.Component {
   };
 
   playBtn = () => {
+    this.setState({ isPaused: false });
+    clearInterval(this.intervalId);
     this.intervalId = setInterval(this.play, this.speed);
   };
 
@@ -79,16 +81,16 @@ class App extends React.Component {
 
   pauseBtn = () => {
     clearInterval(this.intervalId);
-    this.setState({ isPaused: !this.state.isPaused });
+    this.setState({ isPaused: true });
   };
 
   slow = () => {
-    this.speed = 1000;
+    this.speed = this.speed >= 5300 ? 5300 : this.speed + 1000;
     this.playBtn();
   };
 
   fast = () => {
-    this.speed = 300;
+    this.speed = this.speed <= 300 ? 300 : this.speed - 1000;
     this.playBtn();
   };
 
@@ -104,9 +106,23 @@ class App extends React.Component {
     this.speed = 300;
   };
 
-  componentDidMount() {
-    this.seed();
-  }
+  gridSize = size => {
+    console.log(size);
+    switch (size) {
+      case 1:
+        this.cols = 30;
+        this.rows = 30;
+        break;
+      case 2:
+        this.cols = 40;
+        this.rows = 40;
+        break;
+      default:
+        this.cols = 50;
+        this.rows = 50;
+    }
+    this.clear();
+  };
 
   render() {
     return (
@@ -127,6 +143,7 @@ class App extends React.Component {
           fast={this.fast}
           clear={this.clear}
           seed={this.seed}
+          gridSize={this.gridSize}
         />
         <section className="rules">
           <hr
