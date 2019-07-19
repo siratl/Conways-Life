@@ -12,6 +12,7 @@ class App extends React.Component {
     this.cols = 50;
 
     this.state = {
+      isClickable: true,
       isPaused: false,
       generation: 0,
       gridFull: Array(this.rows)
@@ -43,7 +44,7 @@ class App extends React.Component {
   };
 
   playBtn = () => {
-    this.setState({ isPaused: false });
+    this.setState({ isPaused: false, isClickable: false });
     clearInterval(this.intervalId);
     this.intervalId = setInterval(this.play, this.speed);
   };
@@ -81,7 +82,7 @@ class App extends React.Component {
 
   pauseBtn = () => {
     clearInterval(this.intervalId);
-    this.setState({ isPaused: true });
+    this.setState({ isPaused: true, isClickable: true });
   };
 
   slow = () => {
@@ -102,6 +103,7 @@ class App extends React.Component {
     this.setState({
       gridFull: grid,
       generation: 0,
+      isClickable: true,
     });
     this.speed = 300;
   };
@@ -135,6 +137,7 @@ class App extends React.Component {
           rows={this.rows}
           cols={this.cols}
           selectBox={this.selectBox}
+          isClickable={this.state.isClickable}
         />
         <Buttons
           playBtn={this.playBtn}

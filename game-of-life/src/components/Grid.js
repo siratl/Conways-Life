@@ -25,6 +25,7 @@ class Grid extends React.Component {
             row={i}
             col={j}
             selectBox={this.props.selectBox}
+            isClickable={this.props.isClickable}
           />,
         );
       }
