@@ -4,7 +4,7 @@ class Box extends React.Component {
   selectBox = () => {
     this.props.isClickable
       ? this.props.selectBox(this.props.row, this.props.col)
-      : alert('Selection Unavailable, Automation Playing!');
+      : alert('Selection Unavailable, Automaton Playing!');
   };
 
   render() {
