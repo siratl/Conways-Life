@@ -69,3 +69,19 @@ body {
 .btn:last-child {
   margin-right: 0px;
 }
+
+.part2 {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  margin: 0 auto;
+  width: 70vw;
+}
+
+.part2 h3 {
+  margin: 10px auto;
+}
+
+.part2 p > p {
+  margin: 10px 0;
+}
