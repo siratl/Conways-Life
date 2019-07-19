@@ -38,3 +38,7 @@ body {
 .alive {
   background-color: green;
 }
+
+.box:hover { 
+  background: rgb(247, 6, 255);
+}
