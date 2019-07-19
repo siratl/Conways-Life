@@ -1,13 +1,10 @@
 import React from 'react';
 
 class Box extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
   selectBox = () => {
-    this.props.selectBox(this.props.row, this.props.col);
+    this.props.isClickable
+      ? this.props.selectBox(this.props.row, this.props.col)
+      : alert('Selection Unavailable, Automation Playing!');
   };
 
   render() {
