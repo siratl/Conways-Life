@@ -178,11 +178,18 @@ class App extends React.Component {
           <section className="part2">
             <h3>About the Algorithm</h3>
             <p>
-              The "Game of Life" is a cellular automaton formulated by John
-              Horton Conway in 1970. He was a British mathematician that
-              postulated several theories including number theory and coding
-              theory. The game is a zero-player game, meaning that its evolution
-              is determined by its initial state, requiring no further input.
+              The "Game of Life" is a cellular automaton formulated by{' '}
+              <a
+                href="https://en.wikipedia.org/wiki/John_Horton_Conway"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                John Horton Conway
+              </a>{' '}
+              in 1970. He was a British mathematician that postulated several
+              theories including the number theory and coding theory. The game
+              is a zero-player game, meaning that its evolution is determined by
+              its initial state, requiring no further input.
               <p>
                 Conway chose the rules above carefully, after considerable
                 experimentation, to meet the criteria:
