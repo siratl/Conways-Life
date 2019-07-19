@@ -1,4 +1,5 @@
 import React from 'react';
+import Box from './Box';
 
 class Grid extends React.Component {
   constructor(props) {
@@ -13,11 +14,18 @@ class Grid extends React.Component {
     let boxClass = '';
     for (let i = 0; i < this.props.rows; i++) {
       for (let j = 0; j < this.props.cols; j++) {
-        const boxId = i + '_' + j;
+        let boxId = i + '_' + j;
 
         boxClass = this.props.gridFull[i][j] ? 'box alive' : 'box dead';
         rowsArr.push(
-          <Box boxClass={boxClass} key={boxId} boxId={boxId} row={i} col={j} selectBox={this.props.selectBox} />,
+          <Box
+            boxClass={boxClass}
+            key={boxId}
+            boxId={boxId}
+            row={i}
+            col={j}
+            selectBox={this.props.selectBox}
+          />,
         );
       }
     }
